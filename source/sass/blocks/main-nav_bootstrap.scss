@@ -56,56 +56,25 @@
   &__slide:hover .header__slide-description {
     display: block;
   }
-
   &__slide:hover .header__slide-name {
     display: block;
 
   }
-
-
   &__slide:hover img {
     transition: 0.2s;
     opacity: 0.5;
-
   }
-
 
   &__mega-menu-slide:hover p {
     display: block;
     width: 90%;
-
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media (max-width:992px){
   .header__slide{
     display: none !important;
   }
-  
+
 }

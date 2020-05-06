@@ -36,29 +36,26 @@ function showPracticePreview(slideNum){
 }
 
 
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  pagination: {
-    el: '.pag-1',
-    clickable: true,
-  },
+
+
+
+//+++++++++++++++++++++++++++++++++++Для слайдера+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+slidersLiterature = document.querySelectorAll('.swiper-container');
+console.log(slidersLiterature);
+
+slidersLiterature.forEach(el => {
+
+  var swiper = new Swiper(el, {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: el.querySelector ('.pag'),
+      clickable: true,
+    },
+  });
+
 });
 
 
-var swiper1 = new Swiper('.swiper-container2', {
-  effect: 'coverflow',
-  grabCursor: true,
-  // centeredSlides: true,
-  slidesPerView: 'auto',
-  coverflowEffect: {
-    rotate: 20,
-    stretch: 0,
-    depth: 220,
-    modifier: 1,
-    slideShadows : true,
-  },
-  pagination: {
-    el: '.pag-2',
-  },
-});
+

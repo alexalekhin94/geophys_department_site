@@ -55,7 +55,7 @@
     display: none !important; } }
 
 .swiper-slide {
-  outline: 1px blue solid;
+  outline: 3px blue solid;
   overflow: hidden; }
 
 .swiper-slide img {
@@ -67,16 +67,95 @@
   -o-object-fit: contain;
      object-fit: contain; }
 
-.swiper-container2 {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px; }
-
 .swiper-slide2 {
   background-position: center;
   background-size: cover;
   background-color: white;
   width: 300px;
-  height: 600px; }
+  height: 300px; }
+
+.swiper-container-2 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+@supports (display: grid) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 5px; }
+  .gallery-slide {
+    outline: 2px red solid; }
+  .gallery-slide-img {
+    width: 100%; } }
+
+@supports not (display: grid) {
+  .gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    max-width: 960px; }
+  .gallery-slide {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 200px;
+    height: 170px;
+    margin-bottom: 15px;
+    outline: 2px red solid;
+    overflow: hidden; }
+  .gallery-slide-img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+  @media (max-width: 846px) {
+    .gallery-slide {
+      width: 240px;
+      height: 200px;
+      margin-bottom: 10px; } }
+  @media (max-width: 767px) {
+    .gallery-slide {
+      width: 300px;
+      height: 200px;
+      margin-bottom: 5px; } } }
+
+.gallery-slide {
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden; }
+
+.gallery-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  outline: 1px red solid; }
+
+.gallery-slide::after {
+  content: '\1F50E';
+  position: absolute;
+  display: none;
+  width: 20px;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%); }
+
+.gallery-slide:hover img {
+  opacity: 0.6;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1); }
+
+.gallery-slide:hover::after {
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */
